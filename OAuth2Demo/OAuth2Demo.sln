@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoAuthorizationServer", "..\OAuth2DemoAuthorizationServer\OAuth2DemoAuthorizationServer.csproj", "{6B176EEF-11B2-4125-9925-155EE720CB29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoMVCClient", "..\OAuth2DemoMVCClient\OAuth2DemoMVCClient.csproj", "{B56441E7-893B-4E1B-AFC3-BA79C294DAB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoSDK", "..\OAuth2DemoSDK\OAuth2DemoSDK.csproj", "{E125A466-84EE-4925-9771-AB564D63E8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoCertification", "..\OAuth2DemoCertification\OAuth2DemoCertification.csproj", "{B60E14C5-EE91-4DD8-9483-469E6AA30A3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoClientManage", "..\OAuth2DemoClientManage\OAuth2DemoClientManage.csproj", "{52F8D348-C4DB-4EBD-95CA-7B9141194283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2DemoDbContext", "..\OAuth2DemoDbContext\OAuth2DemoDbContext.csproj", "{4FCC62A6-9249-4449-90CE-35B6D05F75E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B176EEF-11B2-4125-9925-155EE720CB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B176EEF-11B2-4125-9925-155EE720CB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B176EEF-11B2-4125-9925-155EE720CB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B176EEF-11B2-4125-9925-155EE720CB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56441E7-893B-4E1B-AFC3-BA79C294DAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56441E7-893B-4E1B-AFC3-BA79C294DAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56441E7-893B-4E1B-AFC3-BA79C294DAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56441E7-893B-4E1B-AFC3-BA79C294DAB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E125A466-84EE-4925-9771-AB564D63E8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E125A466-84EE-4925-9771-AB564D63E8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E125A466-84EE-4925-9771-AB564D63E8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E125A466-84EE-4925-9771-AB564D63E8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B60E14C5-EE91-4DD8-9483-469E6AA30A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60E14C5-EE91-4DD8-9483-469E6AA30A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60E14C5-EE91-4DD8-9483-469E6AA30A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60E14C5-EE91-4DD8-9483-469E6AA30A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52F8D348-C4DB-4EBD-95CA-7B9141194283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F8D348-C4DB-4EBD-95CA-7B9141194283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F8D348-C4DB-4EBD-95CA-7B9141194283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F8D348-C4DB-4EBD-95CA-7B9141194283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FCC62A6-9249-4449-90CE-35B6D05F75E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FCC62A6-9249-4449-90CE-35B6D05F75E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FCC62A6-9249-4449-90CE-35B6D05F75E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FCC62A6-9249-4449-90CE-35B6D05F75E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

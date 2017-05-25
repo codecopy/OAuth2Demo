@@ -1,0 +1,47 @@
+﻿<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    商户列表                
+                    <button type="button" class="btn btn-default btn-xs" style="float: right;" data-bind="click: function () { setCurrentClient(); }">
+                        <span class="glyphicon glyphicon-plus">新增商户</span>
+                    </button>
+                </div>
+            </div>
+            <table data-bind="if: clientList().length > 0" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>client_key</th>
+                        <th>网址</th>
+                        <th>地址</th>
+                        <th>状态</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: clientList">
+                    <tr data-bind="css: { success: selected }, click: function (data) { $parent.setCurrentClient(data); }">
+                        <td><span data-bind="text: Name"></span></td>
+                        <td><span data-bind="text: ClientIdentifier"></span></td>
+                        <td><a target="_blank" data-bind="if: SiteUrl, attr: { href: SiteUrl }" href="#">
+                            <span data-bind="text: SiteUrl"></span></a></td>
+                        <td><span data-bind="text: Address"></span></td>
+                        <td><span data-bind="text: IsEnabled() ? '正常' : '暂停使用'"></span></td>
+                        <td style="text-align: center;">
+                            <button type="button" class="btn btn-default btn-xs" data-bind="click: function (data, event) { $parent.changeClientStatus(data); }, clickBubble: false, attr: { title: IsEnabled() ? '禁用' : '启用' }">
+                                <span class="glyphicon" data-bind="css: statusCss"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-xs" title="删除" data-bind="click: function (data, event) { $parent.deleteClient(data) }, clickBubble: false">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () { window.appvm.getClients(); });
+</script>

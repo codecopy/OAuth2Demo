@@ -1,0 +1,118 @@
+﻿<style>
+    .solidbox {
+        background-color: #fff;
+        border-width: 1px;
+        border-color: #ddd;
+        border-radius: 4px 4px 0 0;
+        border-style: solid;
+        box-shadow: none;
+    }
+
+    @if (User.Identity.Name == "admin")
+    {
+        <text>
+        .details-container {
+            position: relative;
+            padding: 45px 15px 15px;
+    }
+
+        .details-container:after {
+            content: "商户明细";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </text>
+    }
+    else
+    {
+        <text>
+    .details-container {
+            border-width: 0;
+    }
+    </text>
+    }
+</style>
+
+@*with也有类似if的功效*@
+<div data-bind="with: currentClient" class="row">
+    <div id="detailsContainer" class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+        <div class="solidbox details-container">
+            <div class="panel-group" id="accordion">
+                <div id="infoDiv" name="infoDiv" class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <form id="infoForm" name="infoForm" role="form">
+                                <div class="form-group">
+                                    <label for="inputClientName">商户名称</label>
+                                    <input data-bind="value: Name" type="text" class="form-control" id="inputClientName" placeholder="商户名称" />
+                                </div>
+                                <div class="solidbox form-group" style="padding: 15px;">
+                                    <div class="form-group">
+                                        <label for="inputAccountName">登录帐号</label>
+                                        <input data-bind="value: AccountName" type="text" class="form-control" id="inputAccountName" placeholder="登录帐号">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputSetPwd">设置登录密码</label>
+                                        <input type="password" class="form-control" id="inputSetPwd" placeholder="设置登录密码">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputCheckPwd">确认登录密码</label>
+                                        <input type="password" class="form-control" id="inputCheckPwd" placeholder="确认登录密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputClientIdentifier">client_id</label>
+                                    <input data-bind="value: ClientIdentifier" type="text" class="form-control" id="inputClientIdentifier">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputClientSecret">client_secret</label>
+                                    <input data-bind="value: ClientSecret" type="text" class="form-control" id="inputClientSecret">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCallback">回调地址</label>
+                                    <input data-bind="value: Callback" type="url" class="form-control" id="inputCallback" placeholder="回调地址">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputUrl">网址</label>
+                                    <input data-bind="value: SiteUrl" type="url" class="form-control" id="inputUrl" placeholder="网址">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">地址</label>
+                                    <input data-bind="value: Address" type="text" class="form-control" id="inputAddress" placeholder="地址">
+                                </div>
+                                <p style="text-align: right;">
+                                    <button type="button" class="btn btn-default" data-bind="click: function (data) { $parent.saveClient(data); }">保存</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">接口权限
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            @Html.Partial("_APIList")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

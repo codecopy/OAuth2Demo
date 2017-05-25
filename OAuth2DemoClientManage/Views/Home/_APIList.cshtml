@@ -1,0 +1,41 @@
+﻿<div>
+    <table data-bind="if: $root.apis().length > 0" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @if (User.Identity.Name == "admin")
+                {
+                    <th style="width: 50px;">权限</th>
+                }
+                <th>类别</th>
+                <th>API</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: $root.apis">
+            @if (User.Identity.Name != "admin")
+            {
+                <!-- ko if: selected -->
+            }
+            <tr data-bind="css: { success: selected }">
+                @if (User.Identity.Name == "admin")
+                {
+                    <td>
+                        <input type="checkbox" data-bind="value: ApiMethod, checked: selected"></td>
+                }
+                <td><span data-bind="text: KindDescription"></span></td>
+                <td><span data-bind="text: ApiMethod"></span></td>
+                <td><span data-bind="text: MethodDescription"></span></td>
+            </tr>
+            @if (User.Identity.Name != "admin")
+            {
+                <!-- /ko -->
+            }
+        </tbody>
+    </table>
+    @if (User.Identity.Name == "admin")
+    {
+        <p style="text-align: right">
+            <button type="button" class="btn btn-default" data-bind="click: function () { $root.saveAPIs(); }">保存</button>
+        </p>
+    }
+</div>

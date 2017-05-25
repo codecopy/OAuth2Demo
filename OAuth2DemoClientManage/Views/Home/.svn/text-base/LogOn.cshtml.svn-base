@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="row" style="padding-top: 50px;">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p class="panel-title"><b class="text-warning">登录</p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码</label>
+                                <input type="password" class="form-control" id="password" name="password" required="required">
+                            </div>
+                            <p class="text-center" id="responseButtonsDiv">
+                                <input type="submit" value="登录" class="btn btn-default" />
+                            </p>
+                        </div>
+                        @if (!string.IsNullOrEmpty(ViewBag.LoginError))
+                        {
+                            <div class="panel-footer" style="color: red;">@Html.DisplayText("LoginError")</div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

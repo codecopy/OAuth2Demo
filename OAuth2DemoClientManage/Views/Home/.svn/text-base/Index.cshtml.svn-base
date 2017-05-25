@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    <script src="~/Scripts/knockout-3.1.0.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 10px;">
+    <div class="container">
+        <p style="text-align: right;">
+            @Html.ActionLink("注销", "Logout", "Home", null, new { @class = "btn btn-link", type = "button" })
+        </p>
+        @if (User.Identity.Name == "admin")
+        {
+            @Html.Partial("_ClientList")
+        }
+        else
+        {
+            <script type="text/javascript">
+                $(function () { window.appvm.setAccountClient('@User.Identity.Name'); });
+            </script>
+        }
+        @Html.Partial("_ClientDetails")
+    </div>
+    <script src="~/Scripts/app.js"></script>    
+</body>
+</html>
